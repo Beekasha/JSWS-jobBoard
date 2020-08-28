@@ -16,7 +16,11 @@ const doc = new GoogleSpreadsheet(process.env.SHEET_ID_FROM_URL);
     console.log(doc.title);
     await doc.updateProperties({ title: 'renamed doc2' });
     
-    // const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
+    const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
+    await sheet.addRows([
+        { title: 'Software Engineer', location: 'NY' },
+        { title: 'Software Developer', location: 'LA' },
+    ]);
     // console.log(sheet.title);
     // console.log(sheet.rowCount);
     
