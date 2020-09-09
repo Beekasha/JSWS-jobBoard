@@ -14,11 +14,11 @@ const doc = new GoogleSpreadsheet(process.env.SHEET_ID_FROM_URL);
 
     await doc.loadInfo(); // loads document properties and worksheets
     console.log(doc.title);
-    await doc.updateProperties({ title: 'renamed doc2' });
+    await doc.updateProperties({ title: 'renamed secure' });
     
     const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
     await sheet.addRows([
-        { title: 'Software Engineer', location: 'NY' },
+        { title: 'Software Engineer', location: 'FL' },
         { title: 'Software Developer', location: 'LA' },
     ]);
     // console.log(sheet.title);
