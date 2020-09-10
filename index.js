@@ -39,8 +39,8 @@ async function scrapePage(i) {
 
     console.log('total rows length', rows.length)
 
-    // const sheet = new Sheet();
-    // await sheet.load();
+    const sheet = new Sheet();
+    await sheet.load();
 
-    // await sheet.addRows(rows);
+    await sheet.addRows(rows);
 })()
