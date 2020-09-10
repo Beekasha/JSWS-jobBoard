@@ -1,3 +1,4 @@
+require('dotenv').config()
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 
 module.exports = class Sheet {
