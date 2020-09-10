@@ -5,8 +5,8 @@ module.exports = class Sheet {
         this.doc = new GoogleSpreadsheet(process.env.SHEET_ID_FROM_URL);
     }
     async load() {
-        await this.dock.useServiceAccountAuth(require('./credentials.json'));
-        await this.dock.loadInfo(); // loads document properties and worksheets
+        await this.doc.useServiceAccountAuth(require('./credentials.json'));
+        await this.doc.loadInfo(); // loads document properties and worksheets
     }
     async addRows(rows) {
         const sheet = this.doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
